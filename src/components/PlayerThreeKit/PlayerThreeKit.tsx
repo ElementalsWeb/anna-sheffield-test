@@ -51,8 +51,8 @@ export const PlayerThreeKit = () => {
         })
         .then(async (api: any) => {
           window.player = api;
-          // await api.when('preloaded');
-          await window.player.when('loaded');
+          await api.when('preloaded');
+          // await window.player.when('loaded');
 
           api.tools.removeTool('zoom');
           window.configurator = await api.getConfigurator();
