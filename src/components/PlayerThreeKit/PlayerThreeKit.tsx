@@ -56,6 +56,18 @@ export const PlayerThreeKit = () => {
 
           api.tools.removeTool('zoom');
           window.configurator = await api.getConfigurator();
+          const attributes = window.configurator.getAttributes().filter((attr: any) => attr.name.includes("Position"))
+          const names = 
+          await window.configurator.prefetchAttributes([
+            "Position 1 Metal",
+            "Position 2 Metal",
+            "Position 3 Metal",
+            "Position 4 Metal",
+            "Position 1",
+            "Position 2",
+            "Position 3",
+            "Position 4",
+          ])
 
 
 
