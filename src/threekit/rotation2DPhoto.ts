@@ -69,13 +69,13 @@ export const rotateTool = ({ ...props }) => {
                   startIndex = optionsCount - 1
                 }
               }
-              console.log(window.configurator.getConfiguration()['Rotation Angle']);
 
               deltaIdx = newDeltaIdx;
-
-              window.configurator.setConfiguration({
-                "Rotation Angle": ROTATIONS[startIndex],
-              });
+              if(starRotationAngle !== ROTATIONS[startIndex]){
+                window.configurator.setConfiguration({
+                  "Rotation Angle": ROTATIONS[startIndex],
+                });
+              }
             }
           },
         };
