@@ -19,8 +19,9 @@ export const rotateTool =async ({ ...props }) => {
 
   const { ROTATIONS } = props;
   let startIndex = 0;
-  await window.configurator.prefetchAttributes(['Rotation Angle'])
-
+  if(window.configurator.getConfiguration()['Rotation Angle']) {
+    await window.configurator.prefetchAttributes(['Rotation Angle'])
+  }
 
   return {
     active: true,
@@ -33,7 +34,8 @@ export const rotateTool =async ({ ...props }) => {
         const optionsCount = ROTATIONS.length;
         let deltaIdx = 0;
 
-        let starRotationAngle = window.configurator.getConfiguration()['Rotation Angle']
+        let starRotationAngle = 
+        
         ROTATIONS.forEach((angle: any, index: any) => {
           if (angle === starRotationAngle) {
             startIndex = index;
