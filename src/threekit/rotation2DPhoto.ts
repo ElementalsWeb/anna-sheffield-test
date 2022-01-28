@@ -14,11 +14,12 @@ class ROTATION {
   }
 }
 
-export const rotateTool = ({ ...props }) => {
+export const rotateTool =async ({ ...props }) => {
   const DRAG_PIXEL_SENSITIVITY = 30;
 
   const { ROTATIONS } = props;
   let startIndex = 0;
+  await window.configurator.prefetchAttributes(['Rotation Angle'])
 
 
   return {
