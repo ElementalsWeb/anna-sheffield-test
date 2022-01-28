@@ -8,7 +8,7 @@ import { Configuration } from "./page/Configuration/Configuration";
 export const recalculateVh = () => {
    
   let vh = window.innerHeight * 0.01;
-
+   console.log()
   document.documentElement.style.setProperty("--vh", `${vh}px`);
   window.onresize = function () {
     setTimeout(function () {
